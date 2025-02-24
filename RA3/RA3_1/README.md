@@ -1,26 +1,116 @@
-# RA3_1
+Server Hardening - Apache Security Practices
 
-Introduction [INTRO](URL_TASKS) :
+1. Introducción
 
-# Tasks
+1.1. Server Hardening
 
-* [TASK_1](#URL_TASK_1): XXX
-* [TASK_2](#URL_TASK_2): XXX
+El hardening de servidores web es el proceso de mejorar la seguridad de un servidor web mediante la reducción de vulnerabilidades y la eliminación de posibles puntos de entrada que los atacantes pueden explotar. Este enfoque se basa en asegurar tanto el sistema operativo como las aplicaciones web que se ejecutan en el servidor, con el objetivo de protegerlo contra una amplia variedad de amenazas, como:
 
-# Task_1
+Ataques de denegación de servicio (DDoS)
 
-Intro...
+Inyecciones de código
 
-![IMG](URL_IMG)
+Explotación de vulnerabilidades conocidas
 
-Example code:
+Acceso no autorizado
 
-```
-$ git clone https://github.com/openssh/openssh-portable
-$ patch -p1 < ~/path/to/openssh.patch
-$ autoreconf
-$ ./configure
-$ make
-```
+1.2. Apache Hardening
 
-# Task_2
+El hardening de Apache se refiere al proceso de reforzar la seguridad del servidor web Apache para reducir la superficie de ataque y protegerlo de posibles vulnerabilidades. Apache es uno de los servidores web más populares y, debido a su amplia adopción, puede ser un objetivo frecuente de ataques.
+
+Buenas prácticas para mejorar la seguridad en Apache:
+
+Mantener Apache actualizado
+
+Desactivar módulos innecesarios
+
+Deshabilitar la visualización de información del servidor
+
+Configurar permisos estrictos
+
+Usar HTTPS (SSL/TLS)
+
+Limitar los métodos HTTP permitidos
+
+Proteger contra ataques de inyección
+
+Implementar autenticación básica
+
+Habilitar y configurar correctamente los registros
+
+Usar un firewall
+
+Configurar Timeout y KeepAlive
+
+Implementar límites de acceso por IP
+
+2. Objetivos
+
+Esta unidad didáctica contribuye a trabajar los siguientes criterios de evaluación:
+
+RA4: Detecta y corrige vulnerabilidades de aplicaciones web analizando su código fuente y configurando servidores web.
+
+CA.A: Se han validado las entradas de los usuarios.
+
+CA.B: Se han detectado riesgos de inyección tanto en el servidor como en el cliente.
+
+CA.E: Se ha gestionado correctamente la sesión del usuario durante el uso de la aplicación.
+
+3. Actividades
+
+3.1. Requisitos
+
+Crear una cuenta de GitHub para las entregas utilizando el correo oficial @alu.edu.gva.es con el usuario PPS+NIA (sin incluir +).
+
+Crear una cuenta en Docker HUB para subir las imágenes de los contenedores con el mismo usuario PPS+NIA.
+
+Utilizar GIT + template para la entrega: Template en GitHub.
+
+3.2. Apache Hardening
+
+Referencia: Hardening Servidor
+
+Prácticas:
+
+Content Security Policy (CSP)
+
+Web Application Firewall
+
+OWASP
+
+Evitar ataques DDoS
+
+EXTRA: Implementación con Nginx
+
+Las imágenes Docker tendrán que estar subidas al Docker HUB utilizando la nomenclatura pps/prX (sustituyendo X por el número de la práctica).
+
+Se debe utilizar la mejor estrategia de capas en la creación de los contenedores, asegurando que los contenedores tengan información en cascada. Ejemplo:
+
+El contenedor 3.1.3 contendrá la información de los contenedores 3.1.2 y 3.1.1.
+
+Cada práctica debe incluir un README con:
+
+Explicación detallada
+
+Validación
+
+Capturas de pantalla
+
+URL para realizar docker pull de la imagen correspondiente.
+
+3.3. Certificados SSL
+
+Referencia: Instalación de Certificados SSL
+
+Tarea:
+
+Instalar un certificado digital en el servidor Apache y generar la imagen Docker correspondiente.
+
+3.4. Apache Hardening Best Practices
+
+Referencia: Apache Web Server Hardening
+
+Tarea:
+
+Implementar las mejores prácticas de securización del servidor Apache y generar la imagen Docker correspondiente.
+
