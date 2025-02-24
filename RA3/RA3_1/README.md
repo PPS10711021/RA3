@@ -86,11 +86,3 @@ Esta unidad didáctica permite cumplir con los siguientes criterios de evaluaci�
 
 ✅ Implementar mejores prácticas de seguridad en Apache y generar la imagen Docker.
 
----
-
-## 📢 Notas finales
-- 🔎 Validar cada implementación con herramientas de seguridad como **OWASP ZAP** y **ModSecurity**.
-- 🔥 Asegurar que todas las imágenes Docker sean funcionales y bien documentadas.
-- 📂 Repositorio GitHub para entregas: [Incluir URL del repo]
-
-🎯 ¡Manos a la obra para mejorar la seguridad de Apache! 🚀
