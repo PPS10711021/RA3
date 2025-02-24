@@ -76,15 +76,6 @@ Esta unidad didáctica permite cumplir con los siguientes criterios de evaluaci�
 
 5️⃣ **EXTRA: Implementación con Nginx**
 
-📌 **Reglas para Docker:**
-✅ Subir imágenes a Docker HUB con la nomenclatura `pps/prX` (X = número de práctica).
-✅ Implementar estrategia de capas: cada contenedor debe heredar de los anteriores.
-✅ Cada práctica debe incluir un **README** con:
-   - 📄 Explicación
-   - 🛠️ Validación
-   - 📸 Capturas de pantalla
-   - 🔗 URL de `docker pull`
-
 ### 🔐 3.3. Certificados SSL
 📖 Referencia: [Instalación de Certificados SSL](https://psegarrac.github.io/Ciberseguridad-PePS/tema1/practicas/2020/11/08/P1-SSL.html)
 
