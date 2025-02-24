@@ -85,21 +85,24 @@ systemctl restart apache2
 ## 📦 Dockerfile
 
 ```dockerfile
-# Imagen base de Apache
-FROM httpd:latest
+FROM ubuntu:latest
 
-# Copiar archivos de configuración
-COPY ./apache-config.conf /usr/local/apache2/conf/httpd.conf
+#Actualizar paquetes e instalar Apache y herramientas necesarias
+RUN apt-get update && apt-get install -y \
+    apache2 apache2-utils openssl \
+    nano iproute2 tree bash procps net-tools curl wget
 
-# Habilitar módulos necesarios
-RUN a2enmod headers \
-    && a2dismod autoindex
+#Copiar la configuración personalizada de Apache
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
-# Exponer el puerto 80 y 443
+#Crear directorio necesario para Apache
+RUN mkdir -p /var/run/apache2
+
+#Exponer los puertos HTTP y HTTPS
 EXPOSE 80 443
 
-# Iniciar Apache en segundo plano
-CMD ["httpd", "-D", "FOREGROUND"]
+#Mantener Apache en ejecución
+CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 
 ### 📌 Notas:
