@@ -51,9 +51,13 @@ Esta unidad didáctica permite cumplir con los siguientes criterios de evaluaci�
 
 #### 📌 Prácticas
 1️⃣ **Content Security Policy (CSP)**
+
 2️⃣ **Web Application Firewall**
+
 3️⃣ **OWASP**
+
 4️⃣ **Evitar ataques DDoS**
+
 5️⃣ **EXTRA: Implementación con Nginx**
 
 📌 **Reglas para Docker:**
