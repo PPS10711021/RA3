@@ -104,7 +104,7 @@ EXPOSE 80 443
 #Mantener Apache en ejecución
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
-![Dockerfile](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Captura%20de%20pantalla%20a%202025-02-24%2019-52-47.png)
+![Dockerfile](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Dockerfile.png)
 
 ### 📌 Notas:
 - **`a2enmod headers`** habilita el módulo `headers`, requerido para CSP y HSTS.
