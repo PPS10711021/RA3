@@ -77,7 +77,7 @@ Header set Content-Security-Policy \
 ```
 Reiniciar Apache para aplicar los cambios:
 ```bash
-systemctl restart apache2
+service apache2 reload
 ```
 
 ---
@@ -104,8 +104,7 @@ EXPOSE 80 443
 #Mantener Apache en ejecución
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
-![Captura de pantalla a 2025-02-24 19-52-47](https://github.com/user-attachments/assets/53d42e77-8e67-4951-8b9f-e7e2ab55e4f8)
-
+![Dockerfile](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Captura%20de%20pantalla%20a%202025-02-24%2019-52-47.png)
 
 ### 📌 Notas:
 - **`a2enmod headers`** habilita el módulo `headers`, requerido para CSP y HSTS.
