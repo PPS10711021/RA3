@@ -101,14 +101,14 @@ EXPOSE 80 443
 #Mantener Apache en ejecución
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
-[Dockerfile](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Dockerfile.png)
+![Dockerfile](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Dockerfile.png)
 
 ### 🚀 Construcción y ejecución del contenedor
 Para construir la imagen:
 ```bash
 docker build -t pps_docker .
 ```
-🖼️ [build](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/build.png)
+![build](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/build.png)
 
 Para ejecutar el contenedor:
 ```bash
