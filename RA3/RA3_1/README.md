@@ -56,9 +56,9 @@ Esta unidad didáctica permite cumplir con los siguientes criterios de evaluaci�
 ## 🛠️ Actividades
 
 ### ✅ 3.1. Requisitos
-- 🔗 Crear una cuenta de **GitHub** para entregas con el usuario (https://github.com/PPS10711021/RA3).
+- 🔗 Crear una cuenta de **GitHub** para entregas con el usuario [Repo Github](https://github.com/PPS10711021/RA3).
 
-- 📦 Crear una cuenta en **Docker HUB** para subir imágenes con el mismo usuario (https://hub.docker.com/r/pps10711021/pps_docker/tags).
+- 📦 Crear una cuenta en **Docker HUB** para subir imágenes con el mismo usuario [Repo DockerHub](https://hub.docker.com/r/pps10711021/pps_docker/tags).
   
 - 🎨 Utilizar **GIT + template**: [Repositorio Template](https://github.com/pkaminasfp/template).
 
