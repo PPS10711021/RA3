@@ -20,6 +20,8 @@ Para instalar ModSecurity en **Apache**, ejecutar:
 ```bash
 apt install libapache2-mod-security2
 ```
+📸 **Instalación de ModSecurity:**
+
 ![Captura de pantalla install mod security](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/install_modsecurity.png)
 
 Una vez instalado, debemos copiar el archivo de configuración recomendado:
@@ -39,6 +41,8 @@ Y cambiarla por:
 ```apache
 SecRuleEngine On
 ```
+📸 **Configuración de ModSecurity:**
+
 ![Captura de pantalla install SecRuleEngine On](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/modsecurity.png)
 
 ### 🔹 2. Habilitar ModSecurity en la configuración de apache2
@@ -52,6 +56,7 @@ Y añadimos lo siguiente:
     SecRuleEngine On
 </IfModule>
 ```
+📸 **Configuración de Apache2:**
 
 ![Captura de pantalla install apache2](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/apache2.png)
 
@@ -81,6 +86,7 @@ https://www.midominioseguro.com/post.php
 ```bash
 <script>alert(1)</script>
 ```
+📸 **Intento de payload malicioso:**
 
 ![Captura de pantalla alert](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/alert.png)
 
