@@ -79,8 +79,26 @@ Esta unidad didáctica permite cumplir con los siguientes criterios de evaluaci�
 
 ✅ Instalar un certificado digital en Apache y generar la imagen Docker.
 
-### 🏆 3.4. Apache Hardening Best Practices
-📖 Referencia: [Apache Web Server Hardening](https://geekflare.com/cybersecurity/apache-web-server-hardening-security/)
+## 📦 Creacicón Dockerfile
 
-✅ Implementar mejores prácticas de seguridad en Apache y generar la imagen Docker.
+```dockerfile
+FROM ubuntu:latest
 
+#Actualizar paquetes e instalar Apache y herramientas necesarias
+RUN apt-get update && apt-get install -y \
+    apache2 apache2-utils openssl \
+    nano iproute2 tree bash procps net-tools curl wget
+
+#Copiar la configuración personalizada de Apache
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
+#Crear directorio necesario para Apache
+RUN mkdir -p /var/run/apache2
+
+#Exponer los puertos HTTP y HTTPS
+EXPOSE 80 443
+
+#Mantener Apache en ejecución
+CMD ["apachectl", "-D", "FOREGROUND"]
+```
+![Dockerfile](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Dockerfile.png)
