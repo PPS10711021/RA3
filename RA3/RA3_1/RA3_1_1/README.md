@@ -30,7 +30,7 @@ CSP opera enviando una **cabecera HTTP** en la respuesta del servidor, que indic
 Ejecutar el siguiente comando:
 ```bash
 a2dismod autoindex
-systemctl restart apache2
+service apache2 reload
 ```
 ![a2dismod](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/a2dismod_autoindex.png)
 
