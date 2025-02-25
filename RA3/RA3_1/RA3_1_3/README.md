@@ -155,13 +155,6 @@ docker run -d -p 80:80 -p 443:443 --name waf-owasp apache-owasp-modsecurity
 
 Configurar **ModSecurity** con las **reglas OWASP CRS** en **Apache** permite una protección avanzada contra amenazas web comunes. Al integrarlo con **Docker**, se facilita su despliegue y mantenimiento en entornos de producción.
 
-🔹 **Próximos pasos:**
-✅ Ajustar reglas personalizadas para reforzar la seguridad.
-✅ Analizar eventos bloqueados en los logs para optimización.
-✅ Integrar ModSecurity con herramientas de monitoreo como **ELK Stack** o **Splunk**.
-
-🚀 **¡Protege tus aplicaciones web con OWASP ModSecurity CRS!** 🔐
-
 ---
 
 [RA3_1_1](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_1) | 
