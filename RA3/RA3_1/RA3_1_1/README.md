@@ -13,22 +13,6 @@ Según **Mozilla Developer**, la **Política de Seguridad del Contenido** (**Con
 ### 🛠️ ¿Cómo funciona?
 CSP opera enviando una **cabecera HTTP** en la respuesta del servidor, que indica a los navegadores desde qué orígenes pueden cargar contenido. Esto permite restringir la ejecución de scripts, imágenes o contenido multimedia desde fuentes no autorizadas.
 
-🔹 **Ejemplo de cabecera CSP básica:**
-```apache
-Content-Security-Policy: default-src 'self'
-```
-Esta configuración permite que el contenido solo provenga del mismo origen que el sitio, excluyendo subdominios.
-
-🔹 **Ejemplo de cabecera CSP avanzada:**
-```apache
-Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com
-```
-### 📖 Explicación:
-- **`default-src 'self'`** → Todo el contenido debe provenir del mismo origen.
-- **`img-src *`** → Permite cargar imágenes desde cualquier origen.
-- **`media-src media1.com media2.com`** → Solo permite archivos de audio/video desde `media1.com` y `media2.com`.
-- **`script-src userscripts.example.com`** → Solo permite ejecutar scripts de `userscripts.example.com`.
-
 ---
 
 ## 🛠️ Práctica 1: Configuración en Apache y Docker
