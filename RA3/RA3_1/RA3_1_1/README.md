@@ -101,6 +101,7 @@ Abrir en un navegador:
 https://www.midominioseguro.com
 ```
 Es normal recibir un aviso de seguridad, ya que el certificado no está firmado por una autoridad de confianza.
+
 📸 **Demostración funcionamiento https:**
 
 ![apache_https](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Apache_https.png)
