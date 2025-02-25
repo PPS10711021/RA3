@@ -21,7 +21,7 @@ Para instalar ModSecurity en **Apache**, ejecutar:
 ```bash
 apt install libapache2-mod-security2
 ```
-
+Instalado en el  [RA3_1_2](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_2)
 ### 🔹 2. Clonar el repositorio de OWASP ModSecurity CRS
 ```bash
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
