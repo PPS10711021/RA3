@@ -45,6 +45,7 @@ Ejecutar el siguiente comando:
 a2dismod autoindex
 systemctl restart apache2
 ```
+![a2dismod](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/a2dismod_autoindex.png)
 
 #### 🔐 2. Configurar la cabecera HSTS
 Agregar en la configuración de Apache:
@@ -107,26 +108,13 @@ Para verificar que la **CSP** y **HSTS** están configuradas correctamente:
 ```bash
 curl -I https://localhost
 ```
+![curl](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/curl.png)
+
 2️⃣ **Comprobar CSP en el navegador:**
    - Abrir las herramientas de desarrollador (`F12` en Chrome/Firefox)
    - Ir a la pestaña `Red` → seleccionar la solicitud → `Encabezados` (`Headers`)
    - Verificar `Content-Security-Policy` y `Strict-Transport-Security`
-
-3️⃣ **Probar CSP con un ataque XSS simulado** usando:
-```html
-<script>alert('XSS')</script>
-```
-Si el navegador bloquea el script, la CSP está funcionando correctamente. 🚀
-
 ---
 
 ## 🎯 Conclusión
 Configurar **CSP** y **HSTS** en Apache mejora la seguridad contra ataques XSS, inyección de código y robo de datos. Además, con la implementación en **Docker**, se facilita la portabilidad y despliegue seguro de servidores web.
-
-🔹 **Próximos pasos:**
-✅ Integrar ModSecurity para mayor protección.
-✅ Implementar políticas CSP más estrictas según la aplicación.
-✅ Auditar la configuración de seguridad con herramientas como **Mozilla Observatory**.
-
-🚀 ¡Asegura tu servidor Apache y refuerza la seguridad de tu aplicación web! 🔐
-
