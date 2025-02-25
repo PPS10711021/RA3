@@ -39,10 +39,25 @@ Y cambiarla por:
 ```apache
 SecRuleEngine On
 ```
+![Captura de pantalla install SecRuleEngine On](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/modsecurity.png)
 
-### 🔹 2. Reiniciar Apache para aplicar cambios
+### 🔹 2. Habilitar ModSecurity en la configuración de apache2
+Editamos el siguiente archivo:
 ```bash
-systemctl restart apache2
+nano /etc/apache2/apache2.conf
+```
+Y añadimos lo siguiente:
+```bash
+<IfModule security2_module>
+    SecRuleEngine On
+</IfModule>
+```
+
+![Captura de pantalla install apache2](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/apache2.png)
+
+### 🔹 3. Reiniciar Apache para aplicar cambios
+```bash
+service apache2 reload
 ```
 
 ---
@@ -75,18 +90,9 @@ Si la petición es bloqueada, ModSecurity devolverá un **Error 403 (Forbidden)*
 
 ![Captura de pantalla bloqueando XSS](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
 
-![Configuración de ModSecurity en Apache](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/modsecurity.png)
-
 ---
 
 ## 🎯 Conclusión
 
 Configurar **ModSecurity** como **WAF** en **Apache** es una excelente práctica para proteger aplicaciones web de ataques como **XSS, inyección SQL y CSRF**. Además, integrarlo con **Docker** facilita su despliegue y mantenimiento en entornos de producción.
-
-🔹 **Próximos pasos:**
-✅ Ajustar reglas personalizadas en ModSecurity para una mayor seguridad.
-✅ Integrar ModSecurity con **OWASP CRS** (Core Rule Set) para una protección más avanzada.
-✅ Analizar logs de ModSecurity con herramientas como **ELK Stack** o **Splunk**.
-
-🚀 **¡Protege tus aplicaciones web con un WAF robusto como ModSecurity!** 🔐
 
