@@ -12,7 +12,11 @@ Includes the following:
 .
 ├── RA3
 │   ├── RA3_1
-│   │   ├── asset
+│   │   ├── RA3_1_1
+│   │   ├── RA3_1_2
+│   │   ├── RA3_1_3
+│   │   ├── RA3_1_4
+│   │   ├── assets
 │   │   └── README.md
 │   ├── RA3_2
 │   │   ├── asset
