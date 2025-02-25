@@ -32,6 +32,8 @@ Ejecutar el siguiente comando:
 a2dismod autoindex
 service apache2 reload
 ```
+📸 **Deshabilitar autoindex:**
+
 ![a2dismod](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/a2dismod_autoindex.png)
 
 #### 🔐 2. Configurar la cabecera HSTS
@@ -39,6 +41,8 @@ Agregar en la configuración de Apache:
 ```apache
 Header always set Content-Security-Policy "default-src 'self'; script-src 'self'"
 ```
+📸 **Configuración Apache2:**
+
 ![apache2conf](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/apache2conf.png)
 
 **Nota:** Se necesita habilitar HTTPS con un certificado SSL válido.
@@ -58,6 +62,7 @@ service apache2 reload
 ```
 
 #### 🔹 2. Crear un Certificado SSL Auto-firmado
+📸 **Creación del Certificado:**
 
 ![cert](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/creacion_cert.png)
 
@@ -71,6 +76,8 @@ Cambiar las siguientes líneas:
 SSLCertificateFile /etc/apache2/ssl/apache.crt
 SSLCertificateKeyFile /etc/apache2/ssl/apache.key
 ```
+📸 **Creación del VirtualHost 443:**
+
 ![virtualhost443](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/config_virtualhost443.png)
 
 Guardar y cerrar el archivo, luego habilitar la configuración SSL:
@@ -84,6 +91,8 @@ Añadir la línea:
 ```bash
 172.16.0.2 www.midominioseguro.com
 ```
+📸 **Configuración del /etc/hosts:**
+
 ![etc_hosts](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/etc_hosts.png)
 
 #### 🔹 5. Probar la Configuración
@@ -92,6 +101,7 @@ Abrir en un navegador:
 https://www.midominioseguro.com
 ```
 Es normal recibir un aviso de seguridad, ya que el certificado no está firmado por una autoridad de confianza.
+📸 **Demostración funcionamiento https:**
 
 ![apache_https](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Apache_https.png)
 
@@ -111,6 +121,8 @@ Para verificar que la **CSP** y **HSTS** están configuradas correctamente:
 ```bash
 curl -I https://localhost
 ```
+📸 **Curl de la configuración de Apache2:**
+
 ![curl](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/curl.png)
 
 ---
@@ -126,5 +138,5 @@ Configurar **CSP** y **HSTS** en Apache mejora la seguridad contra ataques XSS, 
 [RA3_1_4](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_4)
 
 ---
-
+💾 **Imagen Docker CSP:**
 [Imagen CSP](https://hub.docker.com/layers/pps10711021/pps_docker/csp/images/sha256-8b3eb9ed765e95c7178e1b6a801a8bdcab6d986a2ae30ad9365485e6374d7171)
