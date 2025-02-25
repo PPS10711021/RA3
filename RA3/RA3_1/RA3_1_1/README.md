@@ -113,10 +113,6 @@ curl -I https://localhost
 ```
 ![curl](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/curl.png)
 
-2️⃣ **Comprobar CSP en el navegador:**
-   - Abrir las herramientas de desarrollador (`F12` en Chrome/Firefox)
-   - Ir a la pestaña `Red` → seleccionar la solicitud → `Encabezados` (`Headers`)
-   - Verificar `Content-Security-Policy` y `Strict-Transport-Security`
 ---
 
 ## 🎯 Conclusión
