@@ -29,21 +29,16 @@ git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
 
 ### 🔹 3. Mover los archivos de configuración
 ```bash
-sudo mv owasp-modsecurity-crs/crs-setup.conf.example /etc/modsecurity/crs-setup.conf
-sudo mv owasp-modsecurity-crs/rules/ /etc/modsecurity/
-```
-Si hay errores al mover las reglas, ejecutar:
-```bash
-sudo mkdir /etc/modsecurity/rules
-cd owasp-modsecurity-crs/rules
-sudo cp *.* /etc/modsecurity/rules
+mv owasp-modsecurity-crs/crs-setup.conf.example /etc/modsecurity/crs-setup.conf
+mv owasp-modsecurity-crs/rules/ /etc/modsecurity/
 ```
 
 ### 🔹 4. Configurar Apache para cargar las reglas
 Editar el archivo de configuración de ModSecurity:
 ```bash
-sudo nano /etc/apache2/mods-enabled/security2.conf
+nano /etc/apache2/mods-enabled/security2.conf
 ```
+
 Añadir la siguiente configuración:
 ```apache
 <IfModule security2_module>
@@ -56,20 +51,23 @@ Añadir la siguiente configuración:
     Include /etc/modsecurity/rules/*.conf
 </IfModule>
 ```
+![security2](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/security2.png)
 
 ### 🔹 5. Configurar una regla personalizada
 Editar el archivo del host virtual:
 ```bash
-sudo nano /etc/apache2/sites-available/default-ssl.conf
+nano /etc/apache2/sites-available/default-ssl.conf
 ```
 Añadir la siguiente línea:
 ```apache
 SecRuleEngine On
 SecRule ARGS:testparam "@contains test" "id:1234,deny,status:403,msg:'Cazado por Ciberseguridad'"
 ```
+![defaultssl](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/defaultssl.png)
+
 Guardar los cambios y reiniciar Apache:
 ```bash
-sudo systemctl restart apache2
+service apache2 reload
 ```
 
 ---
@@ -78,76 +76,30 @@ sudo systemctl restart apache2
 
 Para comprobar que las reglas están funcionando, podemos realizar distintas pruebas:
 
-### 🛠️ **1. Intentar acceder con un parámetro bloqueado**
-```bash
-curl localhost:8080/index.html?testparam=test
-```
-📸 **Captura de respuesta esperada (403 Forbidden):**
-
-🖼️ [Ver imagen](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2021-49-00.png)
-
-### 🛠️ **2. Intentar ejecutar un comando en la URL** (Simulación de ataque de RCE)
+### 🛠️ **1. Intentar ejecutar un comando en la URL** (Simulación de ataque de RCE)
 ```bash
 localhost:8080/index.html?exec=/bin/bash
 ```
 📸 **Bloqueo del intento de ejecución de comandos:**
 
-🖼️ [Ver imagen](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2021-49-10.png)
-
-### 🛠️ **3. Intento de Path Traversal**
+### 🛠️ **2. Intento de Path Traversal**
 ```bash
 localhost:8080/index.html?exec=/../../
 ```
+![intento_comando](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_comando.png)
+
 📸 **Protección contra Path Traversal:**
 
-🖼️ [Ver imagen](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2021-51-57.png)
-
-### 🛠️ **4. Revisar logs de ModSecurity**
+### 🛠️ **3. Revisar logs de ModSecurity**
 Para verificar los bloqueos en los registros de Apache:
 ```bash
 sudo tail /var/log/apache2/error.log
 ```
+![intento_escalar_dir](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_escalar_dir.png)
+
 📸 **Captura de logs de eventos bloqueados:**
 
-🖼️ [Ver imagen](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2021-52-32.png)
-
-📸 **Detalle de registros OWASP CRS:**
-
-🖼️ [Ver imagen](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2021-52-57.png)
-
----
-
-## 📦 Creación de Imagen Docker con Apache + ModSecurity + OWASP CRS
-
-### 📌 **Dockerfile:**
-```dockerfile
-# Imagen base de Apache
-FROM httpd:latest
-
-# Instalar dependencias y ModSecurity
-RUN apt update && apt install -y libapache2-mod-security2 \
-    && git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /tmp/crs \
-    && mv /tmp/crs/crs-setup.conf.example /etc/modsecurity/crs-setup.conf \
-    && mv /tmp/crs/rules/ /etc/modsecurity/ \
-    && rm -rf /tmp/crs \
-    && echo "Include /etc/modsecurity/rules/*.conf" >> /etc/apache2/mods-enabled/security2.conf
-
-# Exponer los puertos 80 y 443
-EXPOSE 80 443
-
-# Iniciar Apache en segundo plano
-CMD ["httpd", "-D", "FOREGROUND"]
-```
-
-### 🚀 Construcción y ejecución del contenedor
-Para construir la imagen:
-```bash
-docker build -t apache-owasp-modsecurity .
-```
-Para ejecutar el contenedor:
-```bash
-docker run -d -p 80:80 -p 443:443 --name waf-owasp apache-owasp-modsecurity
-```
+![logs](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/logs.png)
 
 ---
 
