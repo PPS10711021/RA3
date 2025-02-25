@@ -54,7 +54,7 @@ Para comprobar que **ModSecurity** está funcionando correctamente, podemos real
 ```bash
 cp post.php /var/www/html/
 ```
-
+[post.php](https://github.com/victorponz/Ciberseguridad-PePS/blob/master/php/validacion/post.php)
 2️⃣ Acceder a la URL del script con una petición potencialmente maliciosa (**simulación de XSS**):
 ```
 https://www.midominioseguro.com/post.php
@@ -64,7 +64,7 @@ Si la petición es bloqueada, ModSecurity devolverá un **Error 403 (Forbidden)*
 
 📸 **Captura de WAF en acción:**
 
-🖼️ [Captura de pantalla bloqueando XSS](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2020-57-49.png)
+🖼️ [Captura de pantalla bloqueando XSS](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
 
 ---
 
