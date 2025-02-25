@@ -108,12 +108,12 @@ Para construir la imagen:
 ```bash
 docker build -t pps_docker .
 ```
+![build](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/build.png)
+
 Para ejecutar el contenedor:
 ```bash
 docker run -d -p 80:80 -p 443:443 --name pps_docker pps_docker
 ```
-![build](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/build.png)
-
 ---
 
 [RA3_1_1](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_1) | 
