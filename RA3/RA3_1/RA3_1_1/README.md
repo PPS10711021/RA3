@@ -107,13 +107,6 @@ Es normal recibir un aviso de seguridad, ya que el certificado no está firmado 
 
 ---
 
-### 📌 Notas:
-- **`a2enmod headers`** habilita el módulo `headers`, requerido para CSP y HSTS.
-- **`a2dismod autoindex`** deshabilita el listado de directorios.
-- **`EXPOSE 80 443`** permite tráfico HTTP y HTTPS en el contenedor.
-
----
-
 ## 🔍 Validación y pruebas
 Para verificar que la **CSP** y **HSTS** están configuradas correctamente:
 
