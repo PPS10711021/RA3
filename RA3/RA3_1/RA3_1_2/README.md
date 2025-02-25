@@ -55,6 +55,7 @@ Para comprobar que **ModSecurity** está funcionando correctamente, podemos real
 cp post.php /var/www/html/
 ```
 [post.php](https://github.com/victorponz/Ciberseguridad-PePS/blob/master/php/validacion/post.php)
+
 2️⃣ Acceder a la URL del script con una petición potencialmente maliciosa (**simulación de XSS**):
 ```
 https://www.midominioseguro.com/post.php
