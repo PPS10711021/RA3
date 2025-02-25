@@ -104,4 +104,4 @@ Configurar **mod_evasive** en **Apache** proporciona una defensa eficaz contra a
 
 ---
 
-[Imagen OWASP](https://hub.docker.com/layers/pps10711021/pps_docker/owasp/images/sha256-9e2068c855c5265813e2e1243454707a58c832b1b65dcc8e1ceb2a31ccddb504)
+[Imagen DOS](https://hub.docker.com/layers/pps10711021/pps_docker/DOS/images/sha256-0a1b2bde9a7d36c487de6bc1716bb9e788c6b78689aa19e836fe69d90938bc27)
