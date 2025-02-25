@@ -37,7 +37,7 @@ systemctl restart apache2
 #### 🔐 2. Configurar la cabecera HSTS
 Agregar en la configuración de Apache:
 ```apache
-Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self'"
 ```
 ![apache2conf](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/apache2conf.png)
 
@@ -58,12 +58,7 @@ service apache2 restart
 ```
 
 #### 🔹 2. Crear un Certificado SSL Auto-firmado
-```bash
-mkdir /etc/apache2/ssl
-openssl req -x509 -nodes -days 365 \ 
-    -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key \ 
-    -out /etc/apache2/ssl/apache.crt
-```
+
 ![cert](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/creacion_cert.png)
 
 #### 🔹 3. Configurar Apache para usar SSL
