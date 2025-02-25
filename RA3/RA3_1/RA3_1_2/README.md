@@ -84,9 +84,9 @@ https://www.midominioseguro.com/post.php?id=1' OR '1'='1
 ```
 📸 **Resultado esperado: ModSecurity bloqueando el acceso**:
 
-🖼️ [Captura de pantalla de error 403](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2021-26-59.png)
+🖼️ [Captura de pantalla de error 403](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
 
-🖼️ [Configuración de ModSecurity en Apache](/mnt/data/Captura%20de%20pantalla%20a%202025-02-24%2021-27-35.png)
+🖼️ [Configuración de ModSecurity en Apache](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/modsecurity.png)
 
 ---
 
