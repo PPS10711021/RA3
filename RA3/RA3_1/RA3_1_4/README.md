@@ -40,6 +40,8 @@ Añadir o modificar los siguientes parámetros:
     DOSWhitelist 127.0.0.1
 </IfModule>
 ```
+📸 **Captura de la configuración:**
+
 ![confevasive](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/4_DOS/confevasive.png)
 
 ### 🔹 3. Crear el directorio de logs y asignar permisos
