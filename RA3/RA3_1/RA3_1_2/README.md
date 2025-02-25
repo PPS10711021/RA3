@@ -96,3 +96,13 @@ Si la petición es bloqueada, ModSecurity devolverá un **Error 403 (Forbidden)*
 
 Configurar **ModSecurity** como **WAF** en **Apache** es una excelente práctica para proteger aplicaciones web de ataques como **XSS, inyección SQL y CSRF**. Además, integrarlo con **Docker** facilita su despliegue y mantenimiento en entornos de producción.
 
+---
+
+[RA3_1_1](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_1) | 
+[RA3_1_2](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_2) | 
+[RA3_1_3](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_3) | 
+[RA3_1_4](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_4)
+
+---
+
+[Imagen WAF](https://hub.docker.com/layers/pps10711021/pps_docker/waf/images/sha256-8b8098afa4147f12642addb2d7ec1e99f784269020b1f9e635f74b2e4f4918af)
