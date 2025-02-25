@@ -82,11 +82,13 @@ localhost:8080/index.html?exec=/bin/bash
 ```
 📸 **Bloqueo del intento de ejecución de comandos:**
 
+![intento_comando](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_comando.png)
+
 ### 🛠️ **2. Intento de Path Traversal**
 ```bash
 localhost:8080/index.html?exec=/../../
 ```
-![intento_comando](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_comando.png)
+![intento_escalar_dir](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_escalar_dir.png)
 
 📸 **Protección contra Path Traversal:**
 
@@ -95,8 +97,6 @@ Para verificar los bloqueos en los registros de Apache:
 ```bash
 sudo tail /var/log/apache2/error.log
 ```
-![intento_escalar_dir](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_escalar_dir.png)
-
 📸 **Captura de logs de eventos bloqueados:**
 
 ![logs](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/logs.png)
