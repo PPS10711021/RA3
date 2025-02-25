@@ -68,42 +68,6 @@ Si la petición es bloqueada, ModSecurity devolverá un **Error 403 (Forbidden)*
 
 ---
 
-## 📦 Creación de Imagen Docker con Apache + ModSecurity
-
-Para facilitar el despliegue de **Apache con ModSecurity**, crearemos una **imagen Docker** con la configuración preinstalada.
-
-### 📌 **Dockerfile:**
-```dockerfile
-# Imagen base de Apache
-FROM httpd:latest
-
-# Copiar configuración de ModSecurity
-COPY ./modsecurity.conf /usr/local/apache2/conf/modsecurity.conf
-
-# Instalar ModSecurity
-RUN apt update && apt install -y libapache2-mod-security2 && \
-    cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf && \
-    sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/modsecurity/modsecurity.conf
-
-# Exponer los puertos 80 y 443
-EXPOSE 80 443
-
-# Iniciar Apache en segundo plano
-CMD ["httpd", "-D", "FOREGROUND"]
-```
-
-### 🚀 Construcción y ejecución del contenedor
-Para construir la imagen:
-```bash
-docker build -t apache-modsecurity .
-```
-Para ejecutar el contenedor:
-```bash
-docker run -d -p 80:80 -p 443:443 --name waf apache-modsecurity
-```
-
----
-
 ## 🔍 Validación y Pruebas
 
 Para verificar el funcionamiento de **ModSecurity**, ejecutar:
