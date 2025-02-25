@@ -110,5 +110,6 @@ Configurar **ModSecurity** como **WAF** en **Apache** es una excelente práctica
 [RA3_1_4](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_4)
 
 ---
+💾 **Imagen Docker WAF:**
 
 [Imagen WAF](https://hub.docker.com/layers/pps10711021/pps_docker/waf/images/sha256-8b8098afa4147f12642addb2d7ec1e99f784269020b1f9e635f74b2e4f4918af)
