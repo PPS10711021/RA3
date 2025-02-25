@@ -106,12 +106,13 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ### 🚀 Construcción y ejecución del contenedor
 Para construir la imagen:
 ```bash
-docker build -t apache-modsecurity .
+docker build -t pps_docker .
 ```
 Para ejecutar el contenedor:
 ```bash
-docker run -d -p 80:80 -p 443:443 --name waf apache-modsecurity
+docker run -d -p 80:80 -p 443:443 --name pps_docker pps_docker
 ```
+![build](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/build.png)
 
 ---
 
