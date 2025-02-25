@@ -39,6 +39,8 @@ Agregar en la configuración de Apache:
 ```apache
 Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 ```
+![apache2conf](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/apache2conf.png)
+
 **Nota:** Se necesita habilitar HTTPS con un certificado SSL válido.
 
 #### 🔍 2.1 Instalación de un Certificado Digital en Apache
@@ -51,39 +53,43 @@ En esta guía, aprenderemos cómo instalar un **certificado SSL auto-firmado** e
 #### 🔹 1. Activar el módulo SSL
 Ejecutar:
 ```bash
-sudo a2enmod ssl
-sudo service apache2 restart
+a2enmod ssl
+service apache2 restart
 ```
 
 #### 🔹 2. Crear un Certificado SSL Auto-firmado
 ```bash
-sudo mkdir /etc/apache2/ssl
-sudo openssl req -x509 -nodes -days 365 \ 
+mkdir /etc/apache2/ssl
+openssl req -x509 -nodes -days 365 \ 
     -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key \ 
     -out /etc/apache2/ssl/apache.crt
 ```
+![cert](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/creacion_cert.png)
 
 #### 🔹 3. Configurar Apache para usar SSL
 Editar el archivo:
 ```bash
-sudo nano /etc/apache2/sites-available/default-ssl.conf
+nano /etc/apache2/sites-available/default-ssl.conf
 ```
 Cambiar las siguientes líneas:
 ```apache
 SSLCertificateFile /etc/apache2/ssl/apache.crt
 SSLCertificateKeyFile /etc/apache2/ssl/apache.key
 ```
+![virtualhost443](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/config_virtualhost443.png)
+
 Guardar y cerrar el archivo, luego habilitar la configuración SSL:
 ```bash
-sudo a2ensite default-ssl.conf
-sudo service apache2 restart
+a2ensite default-ssl.conf
+service apache2 restart
 ```
 
-#### 🔹 4. Configurar `/etc/hosts`
+#### 🔹 4. Configurar `/etc/hosts` en el anfitrión
 Añadir la línea:
 ```bash
-127.0.0.1 www.midominioseguro.com
+172.16.0.2 www.midominioseguro.com
 ```
+![etc_hosts](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/etc_hosts.png)
 
 #### 🔹 5. Probar la Configuración
 Abrir en un navegador:
@@ -92,21 +98,7 @@ https://www.midominioseguro.com
 ```
 Es normal recibir un aviso de seguridad, ya que el certificado no está firmado por una autoridad de confianza.
 
----
-
-#### 🛡️ 3. Configurar la cabecera CSP
-Editar el archivo de configuración de Apache (`/etc/apache2/sites-available/000-default.conf` o `default-ssl.conf` si está usando HTTPS) y añadir:
-```apache
-Header set Content-Security-Policy \
-    default-src 'self'; \
-    img-src *; \
-    media-src media1.com media2.com; \
-    script-src userscripts.example.com
-```
-Reiniciar Apache para aplicar los cambios:
-```bash
-service apache2 reload
-```
+![apache_https](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Apache_https.png)
 
 ---
 
