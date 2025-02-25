@@ -122,5 +122,4 @@ Configurar **ModSecurity** con las **reglas OWASP CRS** en **Apache** permite un
 
 ---
 💾 **Imagen Docker OWASP:**
-
 [Imagen OWASP](https://hub.docker.com/layers/pps10711021/pps_docker/owasp/images/sha256-9e2068c855c5265813e2e1243454707a58c832b1b65dcc8e1ceb2a31ccddb504)
