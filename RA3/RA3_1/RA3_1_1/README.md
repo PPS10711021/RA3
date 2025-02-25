@@ -41,6 +41,59 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 ```
 **Nota:** Se necesita habilitar HTTPS con un certificado SSL válido.
 
+#### 🔍 2.1 Instalación de un Certificado Digital en Apache
+
+### 📌 Introducción
+En esta guía, aprenderemos cómo instalar un **certificado SSL auto-firmado** en Apache en un servidor Linux, lo que permitirá cifrar el tráfico del servidor.
+
+### 🚀 Pasos a seguir
+
+#### 🔹 1. Activar el módulo SSL
+Ejecutar:
+```bash
+sudo a2enmod ssl
+sudo service apache2 restart
+```
+
+#### 🔹 2. Crear un Certificado SSL Auto-firmado
+```bash
+sudo mkdir /etc/apache2/ssl
+sudo openssl req -x509 -nodes -days 365 \ 
+    -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key \ 
+    -out /etc/apache2/ssl/apache.crt
+```
+
+#### 🔹 3. Configurar Apache para usar SSL
+Editar el archivo:
+```bash
+sudo nano /etc/apache2/sites-available/default-ssl.conf
+```
+Cambiar las siguientes líneas:
+```apache
+SSLCertificateFile /etc/apache2/ssl/apache.crt
+SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+```
+Guardar y cerrar el archivo, luego habilitar la configuración SSL:
+```bash
+sudo a2ensite default-ssl.conf
+sudo service apache2 restart
+```
+
+#### 🔹 4. Configurar `/etc/hosts`
+Añadir la línea:
+```bash
+127.0.0.1 www.midominioseguro.com
+```
+
+#### 🔹 5. Probar la Configuración
+Abrir en un navegador:
+```
+https://www.midominioseguro.com
+```
+Es normal recibir un aviso de seguridad, ya que el certificado no está firmado por una autoridad de confianza.
+
+---
+
 #### 🛡️ 3. Configurar la cabecera CSP
 Editar el archivo de configuración de Apache (`/etc/apache2/sites-available/000-default.conf` o `default-ssl.conf` si está usando HTTPS) y añadir:
 ```apache
