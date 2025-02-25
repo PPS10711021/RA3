@@ -20,6 +20,7 @@ Para instalar ModSecurity en **Apache**, ejecutar:
 ```bash
 apt install libapache2-mod-security2
 ```
+![Captura de pantalla install mod security](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/install_modsecurity.png)
 
 Una vez instalado, debemos copiar el archivo de configuración recomendado:
 ```bash
@@ -65,7 +66,7 @@ Si la petición es bloqueada, ModSecurity devolverá un **Error 403 (Forbidden)*
 
 📸 **Captura de WAF en acción:**
 
-🖼️ [Captura de pantalla bloqueando XSS](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
+![Captura de pantalla bloqueando XSS](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
 
 ---
 
@@ -85,9 +86,9 @@ https://www.midominioseguro.com/post.php?id=1' OR '1'='1
 ```
 📸 **Resultado esperado: ModSecurity bloqueando el acceso**:
 
-🖼️ [Captura de pantalla de error 403](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
+![Captura de pantalla de error 403](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
 
-🖼️ [Configuración de ModSecurity en Apache](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/modsecurity.png)
+![Configuración de ModSecurity en Apache](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/modsecurity.png)
 
 ---
 
