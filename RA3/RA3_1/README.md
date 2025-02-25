@@ -66,13 +66,13 @@ Esta unidad didáctica permite cumplir con los siguientes criterios de evaluaci�
 📖 Referencia: [Hardening Servidor](https://psegarrac.github.io/Ciberseguridad-PePS/tema3/seguridad/web/2021/03/01/Hardening-Servidor.html)
 
 #### 📌 Prácticas
-1️⃣ **[Content Security Policy (CSP)](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_1/README.md)**
+1️⃣ **[Content Security Policy (CSP)](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_1)**
 
-2️⃣ **[Web Application Firewall](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_2/README.md)**
+2️⃣ **[Web Application Firewall](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_2)**
 
-3️⃣ **[OWASP](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_3/README.md)**
+3️⃣ **[OWASP](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_3)**
 
-4️⃣ **[Evitar ataques DDoS](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_4/README.md)**
+4️⃣ **[Evitar ataques DDoS](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_4)**
 
 ### 🔐 3.3. Certificados SSL
 📖 Referencia: [Instalación de Certificados SSL](https://psegarrac.github.io/Ciberseguridad-PePS/tema1/practicas/2020/11/08/P1-SSL.html)
