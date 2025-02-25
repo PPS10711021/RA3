@@ -108,7 +108,7 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ### 🚀 Construcción y ejecución del contenedor
 Para construir la imagen:
 ```bash
-docker build -t pps_docker .
+docker build -t pps_docker -f pps_docker .
 ```
 📸 **Docker build de la imagen:**
 
