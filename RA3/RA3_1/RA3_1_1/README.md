@@ -54,7 +54,7 @@ En esta guía, aprenderemos cómo instalar un **certificado SSL auto-firmado** e
 Ejecutar:
 ```bash
 a2enmod ssl
-service apache2 restart
+service apache2 reload
 ```
 
 #### 🔹 2. Crear un Certificado SSL Auto-firmado
