@@ -92,11 +92,9 @@ localhost:8080/index.html?exec=/bin/bash
 ```bash
 localhost:8080/index.html?exec=/../../
 ```
-📸 **Bloqueo del intento de ejecución de comandos:**
+📸 **Bloqueo del intento de path transversal:**
 
 ![intento_escalar_dir](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_escalar_dir.png)
-
-📸 **Protección contra Path Traversal:**
 
 ### 🛠️ **3. Revisar logs de ModSecurity**
 Para verificar los bloqueos en los registros de Apache:
