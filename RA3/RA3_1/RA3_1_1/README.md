@@ -31,19 +31,6 @@ Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com med
 
 ---
 
-## ⚙️ Configuración en Apache
-Para definir **CSP** en Apache, se debe configurar la cabecera HTTP mediante el módulo `headers`:
-
-```apache
-Header set Content-Security-Policy \
-    default-src 'self'; \
-    img-src *; \
-    media-src media1.com media2.com; \
-    script-src userscripts.example.com
-```
-
----
-
 ## 🛠️ Práctica 1: Configuración en Apache y Docker
 ### 🎯 Objetivos:
 1️⃣ **Deshabilitar el módulo autoindex**
