@@ -51,6 +51,8 @@ Añadir la siguiente configuración:
     Include /etc/modsecurity/rules/*.conf
 </IfModule>
 ```
+📸 **Captura de la configuración:**
+
 ![security2](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/security2.png)
 
 ### 🔹 5. Configurar una regla personalizada
@@ -63,6 +65,8 @@ Añadir la siguiente línea:
 SecRuleEngine On
 SecRule ARGS:testparam "@contains test" "id:1234,deny,status:403,msg:'Cazado por Ciberseguridad'"
 ```
+📸 **Captura de la configuración:**
+
 ![defaultssl](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/defaultssl.png)
 
 Guardar los cambios y reiniciar Apache:
@@ -88,6 +92,8 @@ localhost:8080/index.html?exec=/bin/bash
 ```bash
 localhost:8080/index.html?exec=/../../
 ```
+📸 **Bloqueo del intento de ejecución de comandos:**
+
 ![intento_escalar_dir](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/3_OWASP/intento_escalar_dir.png)
 
 📸 **Protección contra Path Traversal:**
