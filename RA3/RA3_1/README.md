@@ -103,6 +103,16 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 ![Dockerfile](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/1_CSP/Dockerfile.png)
 
+### 🚀 Construcción y ejecución del contenedor
+Para construir la imagen:
+```bash
+docker build -t apache-modsecurity .
+```
+Para ejecutar el contenedor:
+```bash
+docker run -d -p 80:80 -p 443:443 --name waf apache-modsecurity
+```
+
 ---
 
 [RA3_1_1](https://github.com/PPS10711021/RA3/edit/main/RA3/RA3_1/RA3_1_1) | 
