@@ -62,31 +62,18 @@ cp post.php /var/www/html/
 https://www.midominioseguro.com/post.php
 ```
 
+**Intento de payload malicioso**:
+```bash
+<script>alert(1)</script>
+```
+
+![Captura de pantalla alert](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/alert.png)
+
 Si la petición es bloqueada, ModSecurity devolverá un **Error 403 (Forbidden)**.
 
-📸 **Captura de WAF en acción:**
+📸 **Resultado esperado: ModSecurity bloqueando el acceso:**
 
 ![Captura de pantalla bloqueando XSS](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
-
----
-
-## 🔍 Validación y Pruebas
-
-Para verificar el funcionamiento de **ModSecurity**, ejecutar:
-
-1️⃣ **Reiniciar Apache y comprobar logs**:
-```bash
-systemctl restart apache2
-cat /var/log/apache2/modsec_audit.log
-```
-
-2️⃣ **Intentar acceder a una URL con una inyección SQL simulada**:
-```
-https://www.midominioseguro.com/post.php?id=1' OR '1'='1
-```
-📸 **Resultado esperado: ModSecurity bloqueando el acceso**:
-
-![Captura de pantalla de error 403](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/error403.png)
 
 ![Configuración de ModSecurity en Apache](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_1/assets/2_WAF/modsecurity.png)
 
