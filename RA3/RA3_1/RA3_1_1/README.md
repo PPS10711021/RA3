@@ -34,8 +34,11 @@ Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com med
 ## 🛠️ Práctica 1: Configuración en Apache y Docker
 ### 🎯 Objetivos:
 1️⃣ **Deshabilitar el módulo autoindex**
+
 2️⃣ **Configurar la cabecera HSTS** (requiere habilitar el módulo `headers` y un certificado SSL/TLS)
+
 3️⃣ **Configurar la cabecera CSP** con un ejemplo válido
+
 4️⃣ **Crear un Dockerfile con toda la configuración**
 
 ### 🚀 Pasos a seguir
