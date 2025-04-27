@@ -3,6 +3,7 @@
 ## LOW
 ## 📋 Explicación
 Al ingresar un apóstrofe (') en un campo de entrada de la aplicación, el servidor devuelve un error SQL. Esto indica que las entradas del usuario no están correctamente validadas ni saneadas, permitiendo descubrir que la aplicación es vulnerable a inyección SQL.
+
 Utilizando un payload como ' UNION SELECT user, password FROM users#, es posible realizar una inyección SQL para unir consultas (UNION) y extraer información confidencial de la base de datos, como usuarios y contraseñas, sin necesidad de autenticación previa.
 
 ## 🖥️ Payload ejecutado
