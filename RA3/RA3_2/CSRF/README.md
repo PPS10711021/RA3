@@ -31,5 +31,4 @@ En este caso, tenemos que crear un archivo llamado csrf.php con el código de ab
 ```
 
 ## 📸 Captura de pantalla
-![a2dismod](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_2/images/csrf3.png)
 ![a2dismod](https://github.com/PPS10711021/RA3/blob/main/RA3/RA3_2/images/csrf4.png)
