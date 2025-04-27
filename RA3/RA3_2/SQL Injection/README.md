@@ -7,7 +7,7 @@
 ## 🖥️ Comando ejecutado
 ```bash
 [Comando que has utilizado]
-
+```
 ## 📸 Captura de pantalla
 
 ---
@@ -21,5 +21,5 @@
 ## 🖥️ Comando ejecutado
 ```bash
 [Comando que has utilizado]
-
+```
 ## 📸 Captura de pantalla
